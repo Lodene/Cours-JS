@@ -1,0 +1,12 @@
+#lumiere {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+}
+
+#lampe {
+    width: 100px;
+}
+.lumiereTout {
+    display: flex;
+}

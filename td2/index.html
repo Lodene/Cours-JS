@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h2>EX 1</h2>
+    <form>
+        <input id="btnOn" type="button" value="Turn on" onclick="lumiere(1)"/>
+    </form>
+    <form>
+        <input id="btnOff" type="button" value="Turn off" onclick="lumiere(0)"/>
+    </form>
+    <div class="lumiereTout">
+        <div id="lumiere"></div>
+        <img src="eteint.png" alt="lampe" id="lampe">
+    </div>
+    <br />
+    <br />
+
+    <h2>EX 2</h2>
+    <form>
+        <input type="text" name="Pseudo" id="pseudo" placeholder="Pseudo">
+        <label for="pseudo" id="pseudoText"></label><br />
+        <input type="text" name="Age" id="age" placeholder="age">
+        <label for="pseudo" id="ageText"></label><br />
+        <input type="text" name="Identifiant" id="identifiant" placeholder="identifiant">
+        <label for="pseudo" id="identifiantText"></label><br />
+        <input type="text" name="mail" id="mail" placeholder="mail">
+        <label for="pseudo" id="mailText"></label><br />
+        <input type="password" name="mdp" id="mdp" placeholder="mdp">
+        <label for="pseudo" id="mdpText"></label><br />
+        <input type="password" name="mdpConf" id="mdpConf" placeholder="confirmer mdp">
+        <label for="pseudo" id="mdpConfText"></label><br />
+        <input type="checkbox" name="accept" id="accept"><label>j'accpete les CGU</label>
+        <label for="pseudo" id="acceptText"></label><br />
+        <input id="validerBtn" type="button" value="Valider"  onClick="checkBox();" /><br />
+    </form>
+    <div>
+        <p id="erreur"></p>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
