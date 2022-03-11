@@ -34,6 +34,7 @@ const mdpText = document.querySelector('#mdpText');
 const mdpConfText = document.querySelector('#mdpConfText');
 const acceptText = document.querySelector('#acceptText');
 const erreur = document.querySelector('#erreur');
+const mdpTextDeux = document.querySelector('#mdpTextDeux');
 
 var a = [0, 0, 0, 0, 0];
 
@@ -53,7 +54,7 @@ function infoPseudo(){
 
 
 function verificationAge(){
-    return age.value >= 18;
+    return age.value >= 15 && age.value <= 115;
 }
 
 function infoAge(){
@@ -134,12 +135,6 @@ function verificationMdp(){
             compteur = compteur + 1;
         } 
     }
-    console.log(compteur);
-    return compteur;
-}
-
-function infoMdp(){
-    var compteur = verificationMdp();
     switch (compteur) {
         case 0:
             mdpText.innerHTML = "0%";
@@ -164,11 +159,23 @@ function infoMdp(){
         case 5:
             mdpText.innerHTML = "100%";
             mdp.style.borderColor = "green";
-            break;
+            return true;
         default:
             mdpText.innerHTML = "what ?";
             break;
     }
+    return false;
+}
+
+function infoMdp(){
+    if (!verificationMdp()){
+        mdp.style.borderColor = "red";
+        mdpTextDeux.innerHTML = "le mdp n'est pas correcte";
+    } else {
+        mdp.style.borderColor = "green";
+        mdpTextDeux.innerHTML = "";
+    }
+    
 }
 
 function verificationDeuxiemeMdp(){
@@ -186,9 +193,13 @@ function infoDeuxiemeMdp(){
 }
 
 
-function checkBox(){
+function end(){
     if(accept.checked == true){
-        erreur.innerHTML = "";
+        if (verificationPseudo() && verificationAge() && verificationIdentifiant() && verificationMail() && verificationMdp() && verificationDeuxiemeMdp()){
+            erreur.innerHTML = "Vous etes connecté !";
+        } else {
+            erreur.innerHTML = "Remplissez TOUS les champs";
+        }
     }
     else{
         erreur.innerHTML = "Il faut accepter les conditions";
