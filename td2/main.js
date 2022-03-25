@@ -60,7 +60,7 @@ function verificationAge(){
 function infoAge(){
     if (!verificationAge()){
         age.style.borderColor = "red";
-        ageText.innerHTML = "Il faut être majeur";
+        ageText.innerHTML = "Il faut avoir plus de 15ans et moins de 115ans";
     } else {
         age.style.borderColor = "green";
         ageText.innerHTML = "";

@@ -1,0 +1,42 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>TP2</title>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="column" style="margin-top: 5%">
+                <h1><span id="time"></span>.</h1>
+                <ul id="alarms">
+                    <div id="first" style="display:none;">
+                        <li id="alarm" class="alarm unchecked">
+                            <input type="checkbox" name="alarm_check" class="alarm_check" />
+                            <input type="number" min="0" max="24" name="alarm_hour" class="alarm_hour" />:
+                            <input type="number" min="0" max="60" name="alarm_min" class="alarm_min" />
+                            <input type="text" name="alarm_msg" class="alarm_msg" />
+                            <select name="alarm_sound" class="alarm_sound">
+                                <option value="rick">Rick</option>
+                                <option value="rock">Rock</option>
+                                <option value="rap">Rap</option>
+                                <option value="metal">Metal</option>
+                                <option value="what">???</option>
+                            </select>
+                            <input type="button" value="-" name="del_alarm" id="del_alarm" class="del_alarm" />
+                        </li> 
+                    </div>
+                </ul>
+                <input type="button" value="+" name="add_alarm" id="add_alarm" /><br>
+                <br><br>
+                <audio id="audio"></audio>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
